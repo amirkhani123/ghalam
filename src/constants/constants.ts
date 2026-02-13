@@ -1,12 +1,5 @@
 import { Ifeatures } from "@/interfaces/interfaces";
-import {
-  FaWifi,
-  FaCoffee,
-  FaGamepad,
-  FaPrint,
-  FaClock,
-  FaHeadset,
-} from "react-icons/fa";
+import { FaPrint, FaClock, FaHeadset } from "react-icons/fa";
 const featuresContant: Ifeatures[] = [
   {
     icon: FaClock,
