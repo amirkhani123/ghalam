@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn, Zain } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -10,7 +11,7 @@ const vazirmatn = Vazirmatn({
 const zain = Zain({
   variable: "--font-zain",
   subsets: ["arabic"],
-  weight: ["300","400","700","800"],
+  weight: ["300", "400", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa-ir" dir="rtl">
-      <body className={`${vazirmatn.variable} ${zain.variable} antialiased `}>{children}</body>
+      <body className={`${vazirmatn.variable} ${zain.variable} antialiased `}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
