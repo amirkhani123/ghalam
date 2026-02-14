@@ -10,7 +10,6 @@ function Header() {
         width={1080}
         height={950}
         className="w-1/2"
-        quality={100}
         priority
       />
       <div className="1/2 text-center space-y-8">

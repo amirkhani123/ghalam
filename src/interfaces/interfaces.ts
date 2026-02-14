@@ -5,4 +5,8 @@ interface Ifeatures {
   title: string;
   desc: string;
 }
-export type { Ifeatures };
+interface Iservices {
+  img: string;
+  title: string;
+}
+export type { Ifeatures, Iservices };
