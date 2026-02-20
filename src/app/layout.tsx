@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Vazirmatn, Zain } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa-ir" dir="rtl">
-      <body className={`${vazirmatn.variable} ${zain.variable} antialiased `}>
+      <body
+        className={`${vazirmatn.variable} ${zain.variable} antialiased scroll-smooth `}
+      >
+        <Header />
         {children}
         <Footer />
       </body>

@@ -10,9 +10,13 @@ body {
   margin: auto;
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
+  position: relative;
 }
 @layer components {
   .my-hover {
     @apply transition-all duration-300 ease-in;
+  }
+  .links {
+    @apply relative   after:content-[''] after:w-0 after:h-[2px] after:bg-sky-800 after:absolute after:bottom-[-5px] after:right-0 hover:after:w-full after:transition-all after:ease-in after:duration-300  ;
   }
 }

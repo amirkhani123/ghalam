@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Banner from "@/components/Banner";
 import Line from "@/components/Line";
 import Platforms from "@/components/Platforms";
 import Services from "@/components/Services";
@@ -7,12 +7,12 @@ import Why from "@/components/Why";
 export default function Home() {
   return (
     <>
-      <Header />
+      <Banner />
       <Line text="چرا ما ؟" />
       <Why />
       <Line text="خدمات " />
       <Services />
-     <Line text="راه های ارتباطی"/>
+      <Line text="راه های ارتباطی" />
       <Platforms />
     </>
   );
