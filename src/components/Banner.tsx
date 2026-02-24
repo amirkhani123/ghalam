@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Banner() {
   return (
-    <div className="w-full h-full flex flex-col-reverse md:flex-row items-center justify-center gap-3 md:gap-5 px-4 md:px-8 lg:px-16 mt-16 md:mt-20 font-zain">
+    <div className="w-full h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-3 md:gap-5 px-4 md:px-8 lg:px-16 mt-16 md:mt-20 font-zain">
       <Image
         src="/images/hero.png"
         alt="عکس هدر"

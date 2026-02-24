@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import Judicial from "@/components/Judicial";
 import Line from "@/components/Line";
 import Platforms from "@/components/Platforms";
 import Services from "@/components/Services";
@@ -8,6 +9,8 @@ export default function Home() {
   return (
     <>
       <Banner />
+      <Line text="خدمات قضایی" />
+      <Judicial />
       <Line text="چرا ما ؟" />
       <Why />
       <Line text="خدمات " />

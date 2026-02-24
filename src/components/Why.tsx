@@ -3,7 +3,7 @@ import { featuresConstant } from "@/constants/constants";
 function Why() {
   return (
     <section
-      className="py-12 sm:py-16 px-4 bg-liner-to-b from-gray-50 to-white w-full font-vazirmatn"
+      className="py-12 sm:py-16 px-4 bg-liner-to-b from-gray-50 to-white w-full font-vazirmatn scroll-mt-20"
       id="why"
     >
       <div className="container mx-auto">

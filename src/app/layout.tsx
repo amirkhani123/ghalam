@@ -27,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa-ir" dir="rtl">
+    <html lang="fa-ir" dir="rtl" className=" scroll-smooth">
       <body
-        className={`${vazirmatn.variable} ${zain.variable} antialiased scroll-smooth `}
+        className={`${vazirmatn.variable} ${zain.variable} antialiased  container m-auto box-border relative font-sans `}
       >
         <Header />
         {children}

@@ -50,7 +50,7 @@ function PrintPage() {
           <li className="w-full">
             <Link
               href="https://web.telegram.org/k/#@ghalaaamm"
-              className="w-full  flex items-center justify-center shadow-xl shadow-blue-400/40  p-4 bg-white rounded-xl  hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+              className="w-full  flex items-center justify-center shadow-xl shadow-blue-400/40   p-4 bg-white rounded-xl  hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
             >
               <div className="flex items-center gap-3">
                 <Image

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <header className="w-[95%] md:w-[90%] lg:w-[1400px] fixed top-1 left-1/2 -translate-x-1/2 h-[70px] md:h-[85px] flex items-center justify-between p-2 px-3 md:px-4 shadow-lg shadow-sky-200/20 rounded-xl backdrop-blur-xl text-sky-800 overflow-hidden font-bold text-sm md:text-lg z-20 font-zain">
+    <header className="w-[95%] md:w-[90%] lg:w-[1400px] fixed top-1 left-1/2 -translate-x-1/2 h-[70px] md:h-[85px] flex items-center justify-between p-2 px-3 md:px-4 shadow-lg shadow-sky-200/20 rounded-xl backdrop-blur-xl text-sky-800 overflow-hidden font-bold text-sm md:text-lg z-20 font-zain ">
       <ul className="flex gap-3 md:gap-5 lg:gap-10 items-center">
         <li>
           <Link href="/#services" className="links whitespace-nowrap">
@@ -16,7 +16,7 @@ function Header() {
           </Link>
         </li>
         <li>
-          <Link href="/print" className="links whitespace-nowrap">
+          <Link href="/print" className="links whitespace-nowrap" scroll>
             پرینت
           </Link>
         </li>
