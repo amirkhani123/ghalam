@@ -53,7 +53,7 @@ function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
                 <FaMapMarkerAlt className="text-blue-500  text-sm sm:text-base" />
-                <span>تهران، پونک، بلوار میرزابابا</span>
+                <span>تهران،پونک شمالی،بزرگراه ستاری،بلوار میرزابابایی</span>
               </li>
               <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
                 <FaPhone className="text-blue-500  text-sm sm:text-base" />
