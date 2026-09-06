@@ -1,82 +1,84 @@
-import Image from "next/image";
+import {
+  SocialBaleColor,
+  SocialEitaColor,
+  SocialRubikaColor,
+} from "@persianlabs/icons/react";
 import Link from "next/link";
+import { CgAlignLeft } from "react-icons/cg";
+import { MdMobileFriendly } from "react-icons/md";
 
-function PrintPage() {
+export default function ContactPage() {
   return (
-    <main className="w-full min-h-screen mt-20 sm:mt-24 md:mt-28 px-4 font-vazirmatn">
-      <div className="flex flex-col items-center justify-center gap-6">
-        <ul className="flex flex-col items-center gap-4 w-full max-w-lg">
-          <li className="w-full">
-            <Link
-              href="tel:09029555426"
-              className="w-full flex flex-row-reverse items-center justify-between p-4 bg-white rounded-xl shadow-lg shadow-green-400/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
-            >
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/images/phone.png"
-                  alt="آیکون تلفن"
-                  width={950}
-                  height={250}
-                  className="w-10 sm:w-12 h-auto object-contain"
-                />
-                <span className="text-gray-700 font-bold text-base sm:text-lg">
-                  شماره موبایل جهت ذخیره کلیک کنید
-                </span>
-              </div>
-              <span className="text-left font-mono text-sm sm:text-base text-gray-600">
-                0902 955 5426
+    <main className="w-full min-h-screen mt-20 px-4 py-12 font-vazirmatn flex flex-col items-center justify-start">
+      <header className="text-center mb-10 max-w-md">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-800 w-full">
+          خدمات الکترونیک قضایی غیرحضوری و حضوری قلم
+        </h1>
+        <p className="text-sm text-gray-500 mt-2">
+          ارسال فایل برا پرینت از راهای زیر
+        </p>
+      </header>
+
+      <div className="flex flex-col gap-3 w-full max-w-md">
+        <Link
+          href="tel:09029555426"
+          className="group relative overflow-hidden rounded-2xl bg-white p-4 transition-all duration-300 hover:shadow-md border border-gray-100 flex items-center justify-between"
+        >
+          <div className="flex items-center gap-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 transition-colors group-hover:bg-emerald-100">
+              <MdMobileFriendly className="w-6 h-6" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xs text-gray-400 font-medium">
+                ذخیره شماره همراه
               </span>
-            </Link>
-          </li>
-          <li className="w-full">
-            <Link
-              href="https://web.eitaa.com/#@ghalaaamm"
-              className="w-full  flex items-center justify-center shadow-xl shadow-orange-400/40  p-4 bg-white rounded-xl  hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
-            >
-              <div className="flex items-center gap-3 m-auto">
-                <Image
-                  src="/images/eita.png"
-                  alt="آیکون تلفن"
-                  width={950}
-                  height={250}
-                  className="w-10 sm:w-12 h-auto object-contain"
-                />
-                <span className="text-gray-700 font-bold text-base sm:text-lg">
-                  برای باز شدن ایتا کلیک کنید
-                </span>
-              </div>
-            </Link>
-          </li>
-          <li className="w-full">
-            <Link
-              href="https://web.telegram.org/k/#@ghalaaamm"
-              className="w-full  flex items-center justify-center shadow-xl shadow-blue-400/40   p-4 bg-white rounded-xl  hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
-            >
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/images/telegram.png"
-                  alt="آیکون تلفن"
-                  width={950}
-                  height={250}
-                  className="w-10 sm:w-12 h-auto object-contain"
-                />
-                <span className="text-gray-700 font-bold text-base sm:text-lg">
-                  برای باز شدن تلگرام کلیک کنید
-                </span>
-              </div>
-            </Link>
-          </li>
-        </ul>
+              <span className="text-base font-bold text-gray-800 text-right">
+                5426 955 0902
+              </span>
+            </div>
+          </div>
+        </Link>
 
         <Link
-          href="/"
-          className="px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-600 transition-all duration-300 mt-4"
+          href="https://eitaa.com/ghalaaamm"
+          className="group flex items-center gap-4 rounded-2xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-orange-100"
         >
-          بازگشت به صفحه اصلی
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-100">
+            <SocialEitaColor />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-bold text-gray-800">
+              ارسال از ایتا
+            </span>
+          </div>
+        </Link>
+        <Link
+          href="https://ble.ir/ghalaaamm"
+          className="group flex items-center gap-4 rounded-2xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-orange-100"
+        >
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-100">
+            <SocialBaleColor />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-bold text-gray-800">
+              ارسال از بله
+            </span>
+          </div>
+        </Link>
+        <Link
+          href="https://rubika.ir/ghalaaamm"
+          className="group flex items-center gap-4 rounded-2xl bg-white p-4 border border-gray-100 transition-all duration-300 hover:shadow-md hover:border-orange-100" //ghalaaamm""
+        >
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-100">
+            <SocialRubikaColor />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-bold text-gray-800">
+              ارسال از روبیکا
+            </span>
+          </div>
         </Link>
       </div>
     </main>
   );
 }
-
-export default PrintPage;

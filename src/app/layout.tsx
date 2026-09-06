@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Vazirmatn, Zain } from "next/font/google";
+
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-
-const vazirmatn = Vazirmatn({
+import localFont from "next/font/local";
+import { Zain } from "next/font/google";
+const estedad = localFont({
+  src: "../../public/fonts/Estedad-Regular.woff2",
+  weight: "400",
   variable: "--font-vazirmatn",
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
 });
 const zain = Zain({
   variable: "--font-zain",
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="fa-ir" dir="rtl" className=" scroll-smooth">
       <body
-        className={`${vazirmatn.variable} ${zain.variable} antialiased  container m-auto box-border relative font-sans `}
+        className={`${estedad.variable} ${zain.variable} antialiased  container m-auto box-border relative font-sans  `}
       >
         <Header />
         {children}
