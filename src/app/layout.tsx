@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="fa-ir" dir="rtl" className=" scroll-smooth">
       <body
-        className={`${estedad.variable} ${zain.variable} antialiased  container m-auto box-border relative font-sans  `}
+        className={`${estedad.variable} ${zain.variable} antialiased  container m-auto box-border relative font-sans bg-primary  `}
       >
         <Header />
         {children}

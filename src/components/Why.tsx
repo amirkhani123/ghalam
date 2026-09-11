@@ -1,29 +1,64 @@
-import { featuresConstant } from "@/constants/constants";
+import {
+  FaFileAlt,
+  FaGavel,
+  FaUserTie,
+  FaBalanceScale,
+  FaCalendarCheck,
+  FaSearch,
+} from "react-icons/fa";
 
-function Why() {
+const services = [
+  { icon: FaFileAlt, title: "ارسال اظهارنامه" },
+  { icon: FaGavel, title: "تنظیم و ارسال دادخواست" },
+  { icon: FaUserTie, title: "ثبت نام و ویرایش ثنا" },
+  { icon: FaBalanceScale, title: "مشاوره حقوقی" },
+  { icon: FaCalendarCheck, title: "نوبت دهی قضایی" },
+  { icon: FaSearch, title: "پیگیری لوایح" },
+];
+
+function Services() {
   return (
     <section
-      className="py-12 sm:py-16 px-4 bg-liner-to-b from-gray-50 to-white w-full font-vazirmatn scroll-mt-20"
-      id="why"
+      id="services"
+      className="w-full py-16 sm:py-20 px-4 bg-primary font-vazirmatn scroll-mt-20"
     >
-      <div className="container mx-auto">
-        <div className="flex items-stretch justify-center gap-4 sm:gap-6 flex-wrap">
-          {featuresConstant.map((item, index) => {
+      <div className="container mx-auto max-w-6xl">
+        {/* تیتر بخش */}
+        <div className="text-center mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+            خدمات <span className="text-sky-300">ما</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-l from-sky-300 to-cyan-300 rounded-full mx-auto mt-4" />
+        </div>
+
+        {/* چیدمان فلکس */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {services.map((item, index) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={index}
-                className="flex items-center flex-col w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] xl:w-1/4 bg-white rounded-2xl p-4 sm:p-6 shadow-lg shadow-blue-300/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                className="group relative flex flex-col items-center text-center
+                w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]
+                bg-white/5 backdrop-blur-md rounded-3xl p-6
+                border border-white/10
+                hover:bg-white/10 hover:border-sky-300/40 hover:-translate-y-2
+                transition-all duration-500"
               >
-                <div className="text-3xl sm:text-4xl lg:text-5xl text-blue-500 mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent />
+                {/* هاله نورانی پشت آیکون */}
+                <div className="absolute top-4 w-20 h-20 bg-sky-300/30 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* قاب آیکون */}
+                <div className="relative flex items-center justify-center w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-sky-300/15 border border-sky-300/30 mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  <IconComponent className="text-2xl lg:text-3xl text-sky-300" />
                 </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 mb-2 text-center">
+
+                <h3 className="text-base lg:text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed">
-                  {item.desc}
-                </p>
+
+                {/* خط تزئینی پایین */}
+                <div className="absolute bottom-0 right-1/2 translate-x-1/2 w-0 h-0.5 bg-gradient-to-l from-sky-300 to-cyan-300 rounded-full transition-all duration-500 group-hover:w-1/2" />
               </div>
             );
           })}
@@ -33,4 +68,4 @@ function Why() {
   );
 }
 
-export default Why;
+export default Services;

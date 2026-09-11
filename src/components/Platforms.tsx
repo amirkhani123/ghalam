@@ -1,53 +1,76 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const platforms = [
+  {
+    href: "tel:09029555426",
+    img: "/images/phone.png",
+    alt: "تماس تلفنی",
+    label: "تماس",
+    ring: "hover:border-green-400/60",
+    glow: "group-hover:bg-green-400/20",
+    shadow: "shadow-green-400/30",
+  },
+  {
+    href: "https://web.eitaa.com/#@ghalaaamm",
+    img: "/images/eita.png",
+    alt: "ایتا",
+    label: "ایتا",
+    ring: "hover:border-orange-400/60",
+    glow: "group-hover:bg-orange-400/20",
+    shadow: "shadow-orange-400/30",
+  },
+  {
+    href: "https://web.telegram.org/k/#@ghalaaamm",
+    img: "/images/telegram.png",
+    alt: "تلگرام",
+    label: "تلگرام",
+    ring: "hover:border-sky-400/60",
+    glow: "group-hover:bg-sky-400/20",
+    shadow: "shadow-sky-400/30",
+  },
+];
+
 function Platforms() {
   return (
-    <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 flex justify-center items-center p-3 sm:p-4 rounded-xl shadow-lg shadow-blue-400/30 m-auto gap-3 sm:gap-5 flex-wrap">
-      <Link
-        href="tel:09029555426"
-        className="size-8 sm:size-10 shadow-xl shadow-green-400/30 bg-transparent hover:-translate-y-1 rounded-xl flex items-center justify-center text-white font-bold my-hover transition-all duration-300"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src="/images/phone.png"
-          alt="logo phone"
-          width={950}
-          height={250}
-          className="w-8 sm:w-10 h-auto object-contain"
-        />
-      </Link>
+    <div
+      className="w-[90%] sm:w-2/3 md:w-1/2 lg:w-1/3 mx-auto my-8
+      flex justify-center items-center gap-4 sm:gap-6 flex-wrap
+      p-4 sm:p-5 rounded-2xl
+      bg-primary/95 backdrop-blur-md
+      border border-white/10
+      shadow-xl shadow-sky-900/30"
+    >
+      {platforms.map((item, index) => (
+        <Link
+          key={index}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={item.label}
+          className={`group relative flex items-center justify-center
+          size-12 sm:size-14 rounded-2xl
+          bg-white/10 backdrop-blur-sm
+          border border-white/15
+          ${item.ring}
+          hover:-translate-y-1.5 hover:bg-white/20
+          transition-all duration-300
+          shadow-lg ${item.shadow}`}
+        >
+          {/* هاله نورانی hover */}
+          <div
+            className={`absolute inset-0 rounded-2xl blur-xl opacity-0 transition-opacity duration-500 ${item.glow} group-hover:opacity-100`}
+          />
 
-      <Link
-        href="https://web.eitaa.com/#@ghalaaamm"
-        className="size-8 sm:size-10 shadow-xl shadow-orange-400/40 hover:-translate-y-1 bg-transparent rounded-xl flex items-center justify-center gap-2 font-bold my-hover transition-all duration-300"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src="/images/eita.png"
-          alt="logo eitaa"
-          width={950}
-          height={250}
-          className="w-8 sm:w-10 h-auto object-contain"
-        />
-      </Link>
-
-      <Link
-        href="https://web.telegram.org/k/#@ghalaaamm"
-        className="size-8 sm:size-10 shadow-xl shadow-blue-400/40 bg-transparent rounded-xl hover:-translate-y-1 flex items-center justify-center text-white font-bold my-hover transition-all duration-300"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src="/images/telegram.png"
-          alt="telegram icon"
-          width={800}
-          height={500}
-          className="w-8 sm:w-10 h-auto object-contain"
-        />
-      </Link>
+          <Image
+            src={item.img}
+            alt={item.alt}
+            width={950}
+            height={250}
+            className="relative w-7 sm:w-8 h-auto object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+        </Link>
+      ))}
     </div>
   );
 }

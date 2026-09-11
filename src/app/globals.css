@@ -3,14 +3,14 @@
 @theme inline {
   --font-vazirmatn: var(--font-vazirmatn);
   --font-zain: var(--font-zain);
+  --color-primary: #000928;
 }
-
 
 @layer components {
   .my-hover {
     @apply transition-all duration-300 ease-in;
   }
   .links {
-    @apply relative   after:content-[''] after:w-0 after:h-[2px] after:bg-sky-800 after:absolute after:bottom-[-5px] after:right-0 hover:after:w-full after:transition-all after:ease-in after:duration-300;
+    @apply relative   after:content-[''] after:w-0 after:h-[2px] after:bg-white after:absolute after:bottom-[-5px] after:right-0 hover:after:w-full after:transition-all after:ease-in after:duration-300;
   }
 }

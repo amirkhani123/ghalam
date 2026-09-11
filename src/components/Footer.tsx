@@ -1,68 +1,87 @@
 import { FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
 
+const sections = [
+  {
+    title: "ساعات کاری",
+    items: [
+      { icon: FaClock, text: "شنبه تا پنجشنبه: ۲۴ ساعته" },
+      { icon: FaClock, text: "جمعه‌ها: ۱۶ الی ۲۴" },
+      { icon: FaClock, text: "ایام تعطیل: ۱۵ الی ۲۴" },
+    ],
+  },
+  {
+    title: "تماس با ما",
+    items: [
+      {
+        icon: FaMapMarkerAlt,
+        text: "تهران، پونک شمالی، بزرگراه ستاری، بلوار میرزابابایی",
+      },
+      { icon: FaPhone, text: "۰۹۰۲ ۹۵۵ ۵۴۲۶", ltr: true },
+    ],
+  },
+];
+
 function Footer() {
   return (
     <footer
-      className="text-neutral-700 font-vazirmatn mt-16 sm:mt-20"
       dir="rtl"
+      className="relative mt-16 sm:mt-20 bg-primary text-white font-vazirmatn overflow-hidden"
     >
-      <hr className="h-1 bg-blue-700" />
+      {/* هاله‌های تزئینی */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-sky-400/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl" />
+      </div>
 
-      <div className="container mx-auto px-4 py-8 sm:py-12">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-6 lg:gap-12">
+      {/* خط گرادیانت بالا */}
+      <div className="h-1 bg-gradient-to-l from-sky-300 via-cyan-300 to-sky-300" />
+
+      <div className="relative container mx-auto max-w-6xl px-4 py-12 sm:py-16">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-6 lg:gap-12">
           {/* درباره ما */}
           <div className="w-full md:w-1/3">
             <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="w-1 h-5 sm:h-6 bg-blue-500 rounded-full"></span>
+              <span className="w-1 h-5 sm:h-6 bg-sky-300 rounded-full" />
               درباره ما
             </h3>
-            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-white/70 leading-relaxed">
               کافی‌نت قلم با بیش از ۵ سال سابقه درخشان، آماده ارائه بهترین خدمات
               اینترنتی، چاپ و تکثیر، و خدمات اداری به شما عزیزان می‌باشد.
             </p>
           </div>
 
-          {/* ساعات کاری */}
-          <div className="w-full md:w-1/3">
-            <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="w-1 h-5 sm:h-6 bg-blue-500 rounded-full"></span>
-              ساعات کاری
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
-                <FaClock className="text-blue-500  text-sm sm:text-base" />
-                <span>شنبه تا پنجشنبه: ۲۴ ساعته</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
-                <FaClock className="text-blue-500  text-sm sm:text-base" />
-                <span>جمعه‌ها: ۱۶ الی ۲۴</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
-                <FaClock className="text-blue-500 text-sm sm:text-base" />
-                <span>ایام تعطیل: ۱۵ الی ۲۴</span>
-              </li>
-            </ul>
-          </div>
+          {/* بخش‌های تکراری */}
+          {sections.map((section) => (
+            <div key={section.title} className="w-full md:w-1/3">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2">
+                <span className="w-1 h-5 sm:h-6 bg-sky-300 rounded-full" />
+                {section.title}
+              </h3>
+              <ul className="space-y-3">
+                {section.items.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-white/70 text-sm sm:text-base"
+                    >
+                      <Icon className="text-sky-300 mt-1 shrink-0" />
+                      <span dir={item.ltr ? "ltr" : undefined}>
+                        {item.text}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-          {/* اطلاعات تماس */}
-          <div className="w-full md:w-1/3">
-            <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center gap-2">
-              <span className="w-1 h-5 sm:h-6 bg-blue-500 rounded-full"></span>
-              تماس با ما
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
-                <FaMapMarkerAlt className="text-blue-500  text-sm sm:text-base" />
-                <span>تهران،پونک شمالی،بزرگراه ستاری،بلوار میرزابابایی</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3 text-gray-400 text-sm sm:text-base">
-                <FaPhone className="text-blue-500  text-sm sm:text-base" />
-                <span dir="ltr" className="text-left">
-                  ۰۹۰۲ ۹۵۵ ۵۴۲۶
-                </span>
-              </li>
-            </ul>
-          </div>
+        {/* کپی‌رایت */}
+        <div className="mt-12 pt-6 border-t border-white/10 text-center">
+          <p className="text-xs sm:text-sm text-white/50">
+            © {new Date().getFullYear()} کافی‌نت قلم — تمامی حقوق محفوظ است.
+          </p>
         </div>
       </div>
     </footer>

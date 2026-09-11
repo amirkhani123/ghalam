@@ -1,31 +1,64 @@
-import { servicesConstant } from "@/constants/constants";
-import Image from "next/image";
+import {
+  FaFileAlt,
+  FaGavel,
+  FaUserTie,
+  FaBalanceScale,
+  FaCalendarCheck,
+  FaSearch,
+} from "react-icons/fa";
+
+const services = [
+  { icon: FaFileAlt, title: "ارسال اظهارنامه" },
+  { icon: FaGavel, title: "تنظیم و ارسال دادخواست" },
+  { icon: FaUserTie, title: "ثبت نام و ویرایش ثنا" },
+  { icon: FaBalanceScale, title: "مشاوره حقوقی" },
+  { icon: FaCalendarCheck, title: "نوبت دهی قضایی" },
+  { icon: FaSearch, title: "پیگیری لوایح" },
+];
 
 function Services() {
   return (
     <section
-      className="py-12 sm:py-16 px-4 bg-linear-to-b from-gray-50 to-white w-full font-vazirmatn scroll-mt-20"
       id="services"
+      className="w-full py-16 sm:py-20 px-4 bg-primary font-vazirmatn scroll-mt-20"
     >
-      <div className="container mx-auto">
-        <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 flex-wrap">
-          {servicesConstant.map((item, index) => {
+      <div className="container mx-auto max-w-6xl">
+        {/* تیتر بخش */}
+        <div className="text-center mb-14">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
+            خدمات <span className="text-sky-300">ما</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-l from-sky-300 to-cyan-300 rounded-full mx-auto mt-4" />
+        </div>
+
+        {/* چیدمان فلکس */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {services.map((item, index) => {
+            const IconComponent = item.icon;
             return (
               <div
                 key={index}
-                className="flex items-center flex-col w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-1/4 bg-white rounded-2xl p-3 sm:p-4 shadow-lg shadow-blue-300/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+                className="group relative flex flex-col items-center text-center
+                w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]
+                bg-white/5 backdrop-blur-md rounded-3xl p-6
+                border border-white/10
+                hover:bg-white/10 hover:border-sky-300/40 hover:-translate-y-2
+                transition-all duration-500"
               >
-                <Image
-                  src={item.img}
-                  alt={item.title}
-                  width={950}
-                  height={500}
-                  className="w-20 sm:w-24 md:w-28 lg:w-32 h-auto object-contain"
-                  loading="lazy"
-                />
-                <h3 className="text-sm sm:text-base md:text-lg font-bold text-neutral-700 mb-2 text-center">
+                {/* هاله نورانی پشت آیکون */}
+                <div className="absolute top-4 w-20 h-20 bg-sky-300/30 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* قاب آیکون */}
+                <div className="relative flex items-center justify-center w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-sky-300/15 border border-sky-300/30 mb-5 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  <IconComponent className="text-2xl lg:text-3xl text-sky-300" />
+                </div>
+
+                <h3 className="text-base lg:text-lg font-bold text-white">
                   {item.title}
                 </h3>
+
+                {/* خط تزئینی پایین */}
+                <div className="absolute bottom-0 right-1/2 translate-x-1/2 w-0 h-0.5 bg-gradient-to-l from-sky-300 to-cyan-300 rounded-full transition-all duration-500 group-hover:w-1/2" />
               </div>
             );
           })}
