@@ -1,22 +1,25 @@
 import {
-  FaFileAlt,
-  FaGavel,
-  FaUserTie,
-  FaBalanceScale,
-  FaCalendarCheck,
-  FaSearch,
+  FaPrint, // چاپ و پرینت ✅
+  FaCopy, // کپی و اسکن ✅
+  FaIdCard, // کارت سوخت ✅
+  FaGlobe, // ثبت‌نام‌های اینترنتی (بهتر از FaWifi)
+  FaFileInvoiceDollar, // پرداخت قبوض ✅
+  FaScroll, // گواهی انحصار وراثت (بهتر از FaPassport)
+  FaHome, // کدره‌گیری خودنویس (بهتر از FaMobileAlt)
+  FaCar, // نوبت‌دهی تعویض پلاک (بهتر از FaCamera)
 } from "react-icons/fa";
-
 const services = [
-  { icon: FaFileAlt, title: "ارسال اظهارنامه" },
-  { icon: FaGavel, title: "تنظیم و ارسال دادخواست" },
-  { icon: FaUserTie, title: "ثبت نام و ویرایش ثنا" },
-  { icon: FaBalanceScale, title: "مشاوره حقوقی" },
-  { icon: FaCalendarCheck, title: "نوبت دهی قضایی" },
-  { icon: FaSearch, title: "پیگیری لوایح" },
+  { icon: FaPrint, title: "چاپ و پرینت" },
+  { icon: FaCopy, title: "کپی و اسکن" },
+  { icon: FaIdCard, title: "کارت سوخت" },
+  { icon: FaGlobe, title: "ثبت‌نام اینترنتی" },
+  { icon: FaFileInvoiceDollar, title: "پرداخت قبوض" },
+  { icon: FaScroll, title: "انحصار وراثت" },
+  { icon: FaHome, title: "کدره‌گیری خودنویس" },
+  { icon: FaCar, title: "تعویض پلاک" },
 ];
 
-function Services() {
+function CoffeNet() {
   return (
     <section
       id="services"
@@ -26,7 +29,7 @@ function Services() {
         {/* تیتر بخش */}
         <div className="text-center mb-14">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-            خدمات <span className="text-sky-300">ما</span>
+            خدمات <span className="text-sky-300">کافی‌نت</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-l from-sky-300 to-cyan-300 rounded-full mx-auto mt-4" />
         </div>
@@ -68,4 +71,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default CoffeNet;

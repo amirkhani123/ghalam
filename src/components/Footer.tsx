@@ -36,7 +36,7 @@ function Footer() {
       {/* خط گرادیانت بالا */}
       <div className="h-1 bg-gradient-to-l from-sky-300 via-cyan-300 to-sky-300" />
 
-      <div className="relative container mx-auto max-w-6xl px-4 py-12 sm:py-16">
+      <div className="relative  mx-auto w-full px-4 py-12 sm:py-16">
         <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-6 lg:gap-12">
           {/* درباره ما */}
           <div className="w-full md:w-1/3">

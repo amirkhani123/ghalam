@@ -26,7 +26,7 @@ function Services() {
         {/* تیتر بخش */}
         <div className="text-center mb-14">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-            خدمات <span className="text-sky-300">ما</span>
+            خدمات الکترونیک <span className="text-sky-300">قضایی</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-l from-sky-300 to-cyan-300 rounded-full mx-auto mt-4" />
         </div>
