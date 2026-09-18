@@ -13,6 +13,7 @@ const services = [
   { icon: FaUserTie, title: "ثبت نام و ویرایش ثنا" },
   { icon: FaBalanceScale, title: "مشاوره حقوقی" },
   { icon: FaCalendarCheck, title: "نوبت دهی قضایی" },
+  { icon: FaGavel, title: "تنظیم و ارسال لایحه" },
   { icon: FaSearch, title: "پیگیری لوایح" },
 ];
 

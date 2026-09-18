@@ -31,7 +31,7 @@ export default function ContactPage() {
         <h1 className="text-xl sm:text-2xl font-bold text-white w-full">
           خدمات الکترونیک قضایی غیرحضوری و حضوری قلم
         </h1>
-        <p className="text-sm text-gray-300 mt-2">ارسال فایل برای پرینت</p>
+        <p className="text-sm text-gray-300 mt-2">راه های ارتباطی با ما </p>
       </header>
 
       <div className="flex flex-col gap-3 w-full max-w-md">

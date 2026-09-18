@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -15,18 +14,19 @@ function Header() {
   }, []);
 
   const navLinks = [
-    { href: "/#services", label: "خدمات" },
-    { href: "/#why", label: "چرا ما؟" },
+    { href: "/#services", label: "خدمات قضایی" },
+    { href: "/#net", label: "خدمات اینترنتی" },
+    { href: "/print", label: "پشتیبانی" },
     { href: "/print", label: "پرینت" },
   ];
 
   return (
     <>
       <header
-        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] lg:w-[1400px] max-w-7xl
+        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] lg:w-350 max-w-7xl
         flex items-center justify-between
         px-3 md:px-6
-        h-[65px] md:h-[80px]
+       h-16.25 md:h-20
         rounded-2xl
         font-zain font-bold text-sm md:text-base
         transition-all duration-500 ease-out
@@ -46,8 +46,8 @@ function Header() {
         {/* منوی دسکتاپ */}
         <nav className="relative z-10 hidden md:block">
           <ul className="flex gap-4 lg:gap-10 items-center">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+            {navLinks.map((link, i) => (
+              <li key={i}>
                 <Link
                   href={link.href}
                   className="group relative whitespace-nowrap text-white/90 hover:text-white transition-colors duration-300 py-2"
@@ -86,18 +86,9 @@ function Header() {
         {/* لوگو */}
         <Link
           href="/"
-          className="relative z-10 flex items-center shrink-0 group"
+          className="relative z-10 flex items-center shrink-0 group text-white font-semibold text-2xl font-zain"
         >
-          <div className="relative">
-            <Image
-              src="/images/logo.png"
-              alt="لوگو قلم"
-              width={700}
-              height={700}
-              className="relative w-[60px] mt-5 md:w-[80px] lg:w-[95px] h-auto transition-transform duration-300 "
-              priority
-            />
-          </div>
+          GHALAM{" "}
         </Link>
       </header>
 
@@ -117,8 +108,8 @@ function Header() {
           }`}
         >
           <ul className="flex flex-col gap-1 font-zain font-bold text-white text-base">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+            {navLinks.map((link, i) => (
+              <li key={i}>
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}

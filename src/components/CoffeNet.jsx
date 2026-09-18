@@ -9,20 +9,20 @@ import {
   FaCar, // نوبت‌دهی تعویض پلاک (بهتر از FaCamera)
 } from "react-icons/fa";
 const services = [
-  { icon: FaPrint, title: "چاپ و پرینت" },
-  { icon: FaCopy, title: "کپی و اسکن" },
-  { icon: FaIdCard, title: "کارت سوخت" },
-  { icon: FaGlobe, title: "ثبت‌نام اینترنتی" },
   { icon: FaFileInvoiceDollar, title: "پرداخت قبوض" },
   { icon: FaScroll, title: "انحصار وراثت" },
   { icon: FaHome, title: "کدره‌گیری خودنویس" },
   { icon: FaCar, title: "تعویض پلاک" },
+  { icon: FaPrint, title: "چاپ و پرینت" },
+  { icon: FaHome, title: "سامانه ساغر(صدور سند مالکیت)" },
+  { icon: FaIdCard, title: "کارت سوخت" },
+  { icon: FaGlobe, title: "ثبت‌نام اینترنتی" },
 ];
 
 function CoffeNet() {
   return (
     <section
-      id="services"
+      id="net"
       className="w-full py-16 sm:py-20 px-4 bg-primary font-vazirmatn scroll-mt-20"
     >
       <div className="container mx-auto max-w-6xl">
